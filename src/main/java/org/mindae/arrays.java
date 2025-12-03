@@ -6,7 +6,8 @@ public class arrays {
     public static void main(String[] args) {
         int arr[] = {4, 9, 2, 3, 11};
 //        max(arr);
-        rev(arr);
+//        rev(arr);
+        rev2(arr);
     }
 
     public static void max(int arr[]) {
@@ -30,6 +31,22 @@ public class arrays {
             t = arr2[i];
             arr2[i] = arr2[arr2.length - 1 - i];
             arr2[arr2.length - 1 - i] = t;
+        }
+        System.out.println();
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
+        }
+    }
+    public static void rev2(int[] arr){
+        int[] arr2=Arrays.copyOf(arr, arr.length);
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
+        }
+        int left=0, right=arr2.length-1;
+        while(left<right){
+            int t=arr2[left];
+            arr2[left++]=arr2[right];
+            arr2[right--]=t;
         }
         System.out.println();
         for (int i = 0; i < arr2.length; i++) {
